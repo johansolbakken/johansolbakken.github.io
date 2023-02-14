@@ -53,11 +53,11 @@ jobs:
           branch: gh-pages
           folder: dist
       - name: "Hei"
-        run: Din nisse $CAT_NAME
+        run: echo Din nisse $CAT_NAME
         env:
           CAT_NAME: Mns
       - name: "Printing secret"
-        run: Halla har du printa en secret before eller? $SECRET
+        run: echo Halla har du printa en secret before eller? $SECRET
         env: 
           SECRET: ${{secrets.PASSWORD}}
 
