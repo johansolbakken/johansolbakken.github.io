@@ -88,3 +88,11 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  Johan:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event.build.failJob == 'true'
+    steps:
+
+      - name: Printer navnet
+        run: echo Job failed
