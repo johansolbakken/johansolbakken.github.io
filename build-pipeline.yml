@@ -52,4 +52,9 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+      - name: "Hei"
+        run: "Din nisse $CAT_NAME"
+        env:
+          CAT_NAME: Møns
+
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
