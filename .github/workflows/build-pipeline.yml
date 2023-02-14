@@ -55,7 +55,7 @@ jobs:
       - name: "Hei"
         run: Din nisse $CAT_NAME
         env:
-          CAT_NAME: Møns
+          CAT_NAME: Mns
       - name: "Printing secret"
         run: Halla har du printa en secret before eller? $SECRET
         env: 
