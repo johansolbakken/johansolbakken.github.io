@@ -5,6 +5,9 @@ on:
     branches: [ develop ]
   pull_request:
     branches: [ develop ]
+  schedule:
+    - cron: '30 5 * * 1,3'
+    - cron: '30 5 * * 2,4'
 
 jobs:
   build:
@@ -20,6 +23,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     needs: build
+    if: github.event.schedule != '30 5 * * 1,3'
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 14.x
@@ -34,6 +38,7 @@ jobs:
         run: npm run lint:ts
       - name: Run styles lint and format check
         run: npm run lint:css
+        
   deploy:
     needs: tests
     runs-on: ubuntu-latest
