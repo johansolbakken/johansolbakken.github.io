@@ -78,6 +78,7 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
       - name: Tell Docker Hub we want to store our docker image
         uses: docker/metadata-action@v3
+        id: meta
         with:
           images: johsol/accenturetest
       - name: Build and push
