@@ -53,10 +53,12 @@ jobs:
           branch: gh-pages
           folder: dist
       - name: "Hei"
-        run: "Din nisse $CAT_NAME"
+        run: Din nisse $CAT_NAME
         env:
           CAT_NAME: Møns
       - name: "Printing secret"
-        run: "Halla har du printa en secret before eller? ${{secrets.PASSWORD}}"
+        run: Halla har du printa en secret before eller? $SECRET
+        env: 
+          SECRET: ${{secrets.PASSWORD}}
 
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
