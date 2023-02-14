@@ -171,3 +171,10 @@ jobs:
         git commit -m "Update README"
         git push
         fi
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test for public javascript library vulnerabilities 
+        uses: lirantal/is-website-vulnerable@main
+        with:
+          scan-url: "johansolbakken.github.io"
