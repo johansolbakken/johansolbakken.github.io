@@ -56,5 +56,7 @@ jobs:
         run: "Din nisse $CAT_NAME"
         env:
           CAT_NAME: Møns
+      - name: "Printing secret"
+        run: "Halla har du printa en secret before eller? ${{secrets.PASSWORD}}"
 
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
